@@ -1,0 +1,6 @@
+Flask==3.0.1
+joblib==1.3.2
+numpy==1.26.3
+pandas==2.2.0
+scikit_learn==1.3.2
+sklearn_features==0.0.2

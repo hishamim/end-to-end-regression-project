@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Predict</title>
+{% endblock %}
+
+
+
+{% block body %}
+<h2> Predict </h2>
+<hr>
+<form action="/predict" , method="POST">
+
+    <div class="form-group col-md-6">
+        <label for="long">longitude</label>
+        <input type="number" step=0.0001 class="form-control" id="long" placeholder="longitude" name="long"
+            aria-label="Enter the longitude">
+        <div class="form-text" id="long_help">This filed is required </div>
+        <br>
+        <label for="latit" class="form-label">latitude</label>
+        <input type="number" step=0.0001 class="form-control" id="latit" placeholder="latitude" name="latit"
+            aria-label="Enter the latitude">
+        <div class="form-text" id="latit_help">This filed is required </div>
+        <br>
+        <label for="med_age" class="form-label">Housing Median Age</label>
+        <input type="number" step=0.0001 class="form-control" id="med_age" placeholder="Housing Median Age"
+            name="med_age" aria-label="Enter the Housing Median Age">
+        <div class="form-text" id="med_age_help">This filed is required </div>
+
+        <br>
+        <label for="total_rooms" class="form-label">Total Rooms</label>
+        <input type="number" step=0.0001 class="form-control" id="total_rooms" placeholder="Total Rooms"
+            name="total_rooms" aria-label="Enter the Total Rooms">
+        <div class="form-text" id="total_rooms_help">This filed is required </div>
+
+        <br>
+        <label for="total_bedrooms" class="form-label">Total Bed Rooms</label>
+        <input type="number" step=0.0001 class="form-control" id="total_bedrooms" placeholder="Total Bed Rooms"
+            name="total_bedrooms" aria-label="Enter the Total Bed Rooms">
+        <div class="form-text" id="total_bedrooms_help">This filed is required </div>
+        <br>
+        <label for="pop" class="form-label">Population</label>
+        <input type="number" step=0.0001 class="form-control" id="pop" placeholder="Population" name="pop"
+            aria-label="Enter the Population">
+        <div class="form-text" id="pop_help">This filed is required </div>
+        <br>
+        <label for="hous_hold" class="form-label">House Hold</label>
+        <input type="number" step=0.0001 class="form-control" id="hous_hold" placeholder="House Hold" name="hous_hold"
+            aria-label="Enter the House Hold">
+        <div class="form-text" id="hous_hold_help">This filed is required </div>
+        <br>
+        <label for="median_income" class="form-label">Median Income</label>
+        <input type="number" step=0.0001 class="form-control" id="median_income" placeholder="Median Income"
+            name="median_income" aria-label="Enter the Median Income">
+        <div class="form-text" id="median_income_help">This filed is required </div>
+        <br>
+        <label for="ocean" class="form-label">Ocean Proximity</label>
+        <label for="ocean">Ocean Proximity</label>
+        <select class="form-control" name="ocean" id="ocean" placeholder="Enter Ocean Proximity"
+            aria-label="Enter Ocean Proximity">
+            <option>NEAR BAY</option>
+            <option>INLAND</option>
+            <option>NEAR OCEAN</option>
+            <option>ISLAND</option>
+            <option>1H OCEAN</option>
+        </select>
+
+        <div class="form-text" id="median_income_help">This filed is required </div>
+        <br>
+        <br>
+        <div class="d-grid gap-2">
+            <!-- <input class="btn btn-success btn-lg btn-block" type="submit" value="Predict"> -->
+            <button class="btn btn-success" type="submit">predict</button>
+        </div>
+
+        <br>
+        <br>
+        <h5> House prediction is : {{ pred_val }}</h5>
+        <br>
+        <hr>
+
+
+    </div>
+</form>
+
+{% endblock %}
